@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
 const { promisify } = require('util');
-const mkdirp = require('mkdirp');
+const { mkdirp } = require('mkdirp');
 const writeFile = promisify(fs.writeFile);
 const exists = promisify(fs.exists);
 
