@@ -51,7 +51,7 @@ export default function FeaturesPage() {
         'Responsive design for all devices',
         'Accessible components following best practices',
         'Customizable with Tailwind classes',
-        'Dark mode support',
+        'Clean and consistent visual design',
       ],
     },
     {

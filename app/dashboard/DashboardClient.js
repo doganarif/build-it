@@ -28,8 +28,6 @@ export default function DashboardClient({ user, subscription }) {
   const { 
     setSubscription, 
     addNotification, 
-    toggleTheme,
-    theme,
     todos,
     addTodo,
     toggleTodo,
@@ -73,13 +71,6 @@ export default function DashboardClient({ user, subscription }) {
           <h1 className="text-3xl font-bold">Dashboard</h1>
           <p className="text-gray-600 mt-2">Welcome back, {user.name || user.email}!</p>
         </div>
-        <Button 
-          variant="outline" 
-          onClick={toggleTheme}
-          className="flex items-center gap-2"
-        >
-          {theme === 'dark' ? '☀️ Light' : '🌙 Dark'} Mode
-        </Button>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 mb-12">
