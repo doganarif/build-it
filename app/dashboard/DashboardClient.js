@@ -148,6 +148,11 @@ export default function DashboardClient({ user, subscription }) {
                   Upgrade Plan
                 </ClientButton>
               )}
+              <Link href="/dashboard/cron">
+                <Button variant="secondary" className="w-full">
+                  Manage Cron Jobs
+                </Button>
+              </Link>
               <Link href="/docs">
                 <Button variant="secondary" className="w-full">
                   View Documentation

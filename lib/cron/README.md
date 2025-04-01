@@ -48,12 +48,13 @@ export async function myCustomTask() {
 }
 ```
 
-2. Register the task in `lib/cron/tasks/index.js`:
+2. Register the task in `lib/cron/tasks/registry.js`:
 
 ```js
+// This file should NOT have 'use server' at the top
 import { myCustomTask } from './myCustomTask';
 
-export const tasks = [
+const tasks = [
   // ...existing tasks
   {
     name: 'my-custom-task',
@@ -62,7 +63,23 @@ export const tasks = [
   }
 ];
 
-// Export the task
+export function getTasks() {
+  return tasks;
+}
+
+export function getTaskByName(name) {
+  return tasks.find(task => task.name === name) || null;
+}
+```
+
+3. Export the task in `lib/cron/tasks/index.js`:
+
+```js
+'use server';
+
+import { myCustomTask } from './myCustomTask';
+
+// Export async functions directly
 export {
   // ...existing exports
   myCustomTask
@@ -77,7 +94,7 @@ Examples:
 - `0 * * * *` - Run every hour at minute 0
 - `0 0 * * *` - Run every day at midnight
 - `0 0 * * 0` - Run every Sunday at midnight
-- `0 0 1 * *` - Run first day of every month at midnight
+- `0 0 1 * *` - First day of every month at midnight
 - `*/15 * * * *` - Run every 15 minutes
 
 ### Running tasks manually
@@ -106,6 +123,14 @@ const recentRuns = await db.cronJobRun.findMany({
   take: 10
 });
 ```
+
+### Architecture Notes
+
+This cron system follows Next.js's best practices for server components and actions:
+
+1. **Server Actions**: Files with `'use server'` directive only export async functions.
+2. **Regular Modules**: Configuration and utility functions live in regular modules without the `'use server'` directive.
+3. **Client Utilities**: For client components, use the utilities in `lib/cron/client.js`.
 
 ## Best Practices
 

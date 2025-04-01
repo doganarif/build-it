@@ -7,7 +7,10 @@ import { initCronJobs } from "@/lib/cron";
 
 // Initialize cron jobs in production or when enabled
 if (process.env.ENABLE_CRON_JOBS === 'true' || process.env.NODE_ENV === 'production') {
-  initCronJobs();
+  // Call as async function but don't block rendering
+  initCronJobs().catch(error => {
+    console.error('Failed to initialize cron jobs:', error);
+  });
 }
 
 const geistSans = Geist({

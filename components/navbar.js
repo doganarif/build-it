@@ -28,6 +28,7 @@ export function Navbar({ user }) {
     { name: 'Home', href: '/' },
     { name: 'Features', href: '/features' },
     { name: 'Email', href: '/features/email' },
+    { name: 'Cron Jobs', href: '/features/cronjobs' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Dashboard', href: '/dashboard', auth: true },
   ];
