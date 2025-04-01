@@ -3,6 +3,12 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { getServerSession } from "@/lib/auth";
 import { ClientProviders } from "./ClientProviders.js";
+import { initCronJobs } from "@/lib/cron";
+
+// Initialize cron jobs in production or when enabled
+if (process.env.ENABLE_CRON_JOBS === 'true' || process.env.NODE_ENV === 'production') {
+  initCronJobs();
+}
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

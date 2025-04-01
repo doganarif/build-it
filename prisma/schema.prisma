@@ -100,3 +100,18 @@ model Price {
   updatedAt           DateTime @updatedAt
   product             Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
+
+model CronJobRun {
+  id          String    @id @default(cuid())
+  jobName     String
+  startedAt   DateTime  @default(now())
+  finishedAt  DateTime?
+  duration    Int?      // Duration in milliseconds
+  status      String    // "running", "completed", "failed"
+  error       String?   // Error message if job failed
+  createdAt   DateTime  @default(now())
+  
+  @@index([jobName])
+  @@index([status])
+  @@index([startedAt])
+}
