@@ -1,0 +1,15 @@
+Hello {{user.name}},
+
+Welcome to Our App!
+
+Thank you for signing up! We're excited to have you on board.
+
+Here are a few things you can do to get started:
+- Complete your profile
+- Explore our features
+- Check out our pricing plans
+
+If you have any questions, feel free to reply to this email.
+
+Best regards,
+The Team 

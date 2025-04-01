@@ -27,6 +27,7 @@ export function Navbar({ user }) {
   const navigationItems = [
     { name: 'Home', href: '/' },
     { name: 'Features', href: '/features' },
+    { name: 'Email', href: '/features/email' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Dashboard', href: '/dashboard', auth: true },
   ];

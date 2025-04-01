@@ -1,0 +1,12 @@
+Password Reset
+
+You requested a password reset for your account.
+
+Click the link below to reset your password. This link is valid for 24 hours.
+
+Reset Password: {{resetUrl}}
+
+If you didn't request this, you can safely ignore this email.
+
+Best regards,
+The Team 

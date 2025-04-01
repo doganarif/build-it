@@ -1,0 +1,19 @@
+Subscription Confirmed
+
+Hello {{user.name}},
+
+Thank you for subscribing to our service!
+
+Your subscription is now active and you have full access to all features included in your plan.
+
+Subscription details:
+- Plan: {{subscription.planName}}
+- Billing cycle: {{subscription.billingCycle}}
+- Next billing date: {{subscription.nextBillingDate}}
+
+You can manage your subscription at any time from your account dashboard.
+
+If you have any questions about your subscription, please don't hesitate to contact our support team.
+
+Best regards,
+The Team 

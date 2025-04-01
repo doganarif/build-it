@@ -1,0 +1,29 @@
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+  <h1 style="color: #3b82f6;">Subscription Confirmed</h1>
+  <p>Hello {{user.name}},</p>
+  <p>Thank you for subscribing to our service!</p>
+  <p>Your subscription is now active and you have full access to all features included in your plan.</p>
+  
+  <div style="background-color: #f8fafc; border-radius: 6px; padding: 20px; margin: 25px 0;">
+    <h2 style="font-size: 18px; margin-top: 0; color: #1f2937;">Subscription details:</h2>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb; color: #6b7280;">Plan</td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb; text-align: right; font-weight: 600;">{{subscription.planName}}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb; color: #6b7280;">Billing cycle</td>
+        <td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb; text-align: right; font-weight: 600;">{{subscription.billingCycle}}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; color: #6b7280;">Next billing date</td>
+        <td style="padding: 8px 0; text-align: right; font-weight: 600;">{{subscription.nextBillingDate}}</td>
+      </tr>
+    </table>
+  </div>
+  
+  <p>You can manage your subscription at any time from your account dashboard.</p>
+  <p>If you have any questions about your subscription, please don't hesitate to contact our support team.</p>
+  <p>Best regards,</p>
+  <p>The Team</p>
+</div> 
